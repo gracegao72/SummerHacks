@@ -10,6 +10,14 @@
   background-color: #666;
 }
 
+#container{
+	border: 5px solid #e09cf7; 
+}
+
+#canvas{
+	  transform: translate(50px, 200px);
+}
+
 .button a { 
   float: center;
   color: #e09cf7;
