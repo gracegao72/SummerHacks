@@ -5,17 +5,18 @@
 <title>Display Webcam Stream</title>
  
 <style>
-#container {
+  #container {
 	margin: 0px auto;
 	width: 500px;
 	height: 375px;
-	border: 10px #333 solid;
 }
+
 #videoElement {
 	width: 500px;
-	height: 375px;
+  height: 375px;
 	background-color: #666;
 }
+
 </style>
 </head>
  
@@ -23,12 +24,14 @@
 <div id="container">
 
     <video autoplay="true" id="videoElement"> </video>
-    
-    <a href = "#" id = "capture"> Take photo </a>
 
-    <canvas id = "canvas" width = "400" height = "300"></canvas>
+    <a href = "#" class = "button" id = "capture" download="my-file-name.png"> Take photo & Download </a>
+
+  
+    <canvas id = "canvas" width = "700" height = "575"></canvas>
     
 </div>
+
 <script>
  var video = document.querySelector("#videoElement"),
  canvas = document.getElementById('canvas'),
@@ -43,9 +46,13 @@ if (navigator.mediaDevices.getUserMedia) {
       console.log("Something went wrong!");
     });
 
-document. getElementById('capture'). addEventListener('click', function(){
+var button = document. getElementById('capture');
+button. addEventListener('click', function(){
     context.drawImage(video, 0 , 0, 400, 300)
+    var dataURL = canvas.toDataURL('image/png');
+    button.href = dataURL;
 });
+
 
 }
 
