@@ -1,7 +1,0 @@
-{
-    "manifest_version": 2,
-    "name": "Capture and Save Picture",
-    "description": "Takes a pciture through the webcam and downloads it.",
-    "version": "1",
-    "permissions": ["activeTab", "storage"]
-  }
