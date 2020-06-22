@@ -32,24 +32,3 @@ class CVLibDetector(Detector):
     
 # add class TS Detector
 
-# detect obj in frame, each obj defined by x, y, w ,h parameters
-def addObjs(img1 , objects, color=(255,0,0)):
-    img = np.copy(img1)
-    for (x,y,w,h) in objects
-        img = cv2.rectangle(img, (x,y), (x+w , y+h), color, 2)
-    return img
-
-#turn each detected obj into a polygon and check if they intersect
-def obj_poly(obj)
-    x,y,w,h = obj
-    return Polygon([(x,y), (x+w ,y) , (x+w, y+h), (x, y+h)])
-
-def objects_intersect(face, hands)
-    if face and hands:
-        facePoly = obj_poly(face[0])
-        for hand in hands:
-            handPoly = obj_poly(hand)
-            if facePoly.intersects(handPoly):
-                return True
-    return False
-
