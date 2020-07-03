@@ -1,4 +1,4 @@
-et video;
+let video;
 let poseNet;
 let poses = [];
 var started = false;
